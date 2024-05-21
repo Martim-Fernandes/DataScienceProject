@@ -16,7 +16,7 @@ from sklearn.impute import SimpleImputer
 caminho_do_arquivo = r'C:\Users\marti\Downloads\hcc_dataset.csv'
 dados = pd.read_csv(caminho_do_arquivo, na_values='?', keep_default_na=False)
 
-# Remoção de linhas com alta porcentagem de dados ausentes
+# Remoção de linhas com alta percentagem de dados ausentes
 percent_missing = dados.isna().mean(axis=1) * 100
 indices_to_remove = dados.index[percent_missing > 20].tolist()
 dados = dados.drop(indices_to_remove)
@@ -118,7 +118,7 @@ for name, model in models.items():
     f1 = f1_score(y_test, predictions)
     results[name] = (accuracy, precision, recall, f1)
 
-# Exibindo os resultados
+# Exibição dos resultados
 for name, scores in results.items():
     print(f"{name} - Accuracy: {scores[0]:.2f}, Precision: {scores[1]:.2f}, Recall: {scores[2]:.2f}, F1 Score: {scores[3]:.2f}")
 
@@ -131,12 +131,9 @@ if indices_to_remove:
 else:
     print("Nenhuma linha foi removida.")
 
-# Análise exploratória de dados após treinamento
-# Primeiro, é necessário carregar ou definir as colunas 'Class_Dies' e 'Class_Lives' se ainda não estiverem no dataset
-# Aqui, estou supondo que 'Class_Dies' é a variável 'y' e 'Class_Lives' é o inverso
+# Análise exploratória dos dados após treinamento e tratamento
 class_counts = dados['Class_Dies'].value_counts().rename(index={0: 'Class_Lives', 1: 'Class_Dies'})
 
-# Plotando a distribuição das classes alvo
 plt.figure(figsize=(6, 4))
 sns.barplot(x=class_counts.index, y=class_counts.values)
 plt.title('Sobrevivência dos pacientes')
