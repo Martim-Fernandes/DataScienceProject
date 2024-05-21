@@ -31,7 +31,7 @@ pip install pandas seaborn matplotlib numpy scikit-learn imbalanced-learn
 
 O projeto consiste em dois arquivos principais:
 
-DSproject.py: Contém todo o código para processamento dos dados, treinamento dos modelos e visualização dos resultados.
+tabela.py: Contém todo o código para processamento dos dados, treinamento dos modelos e visualização dos resultados.
 README.md: Este guia com instruções e documentação.
 
 
