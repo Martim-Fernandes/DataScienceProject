@@ -4,7 +4,7 @@ Guia de Uso e Execução do Programa
 
 # Introdução
 
-Este guia tem como objetivo fornecer instruções detalhadas para a execução do programa que processa e analisa um conjunto de dados de um estudo sobre câncer hepático. O programa realiza diversas etapas, desde o pré-processamento dos dados até a aplicação de modelos de machine learning para prever a sobrevivência dos pacientes. Este documento também aborda as dependências necessárias e a documentação básica para a compreensão e modificação do código.
+Este guia tem como objetivo fornecer instruções detalhadas para a execução do programa que processa e analisa um conjunto de dados de um estudo sobre cancro hepático. O programa realiza diversas etapas, desde o pré-processamento dos dados até a aplicação de modelos de machine learning para prever a sobrevivência dos pacientes. Este documento também aborda as dependências necessárias e a documentação básica para a compreensão e modificação do código.
 
 # Dependências de Pacote
 
@@ -22,7 +22,7 @@ scikit-learn
 
 imbalanced-learn
 
-Para instalar todas as dependências, você pode usar o seguinte comando:
+Para instalar todas as dependências, pode usar o seguinte comando:
 
 pip install pandas seaborn matplotlib numpy scikit-learn imbalanced-learn
 
@@ -70,7 +70,7 @@ dados = pd.read_csv(caminho_do_arquivo, na_values='?', keep_default_na=False)
 # Pré-Processamento
 
 Remoção de Linhas com Alta Percentagem de Dados Ausentes:
-Linhas com mais de 20% de valores ausentes são removidas, mas se pretender pode modificar essa valor.
+Linhas com mais de 20% de valores ausentes são removidas, mas pode-se modificar esse valor.
 percent_missing = dados.isna().mean(axis=1) * 100
 indices_to_remove = dados.index[percent_missing > 20].tolist()
 dados = dados.drop(indices_to_remove)
