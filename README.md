@@ -7,39 +7,64 @@ Introdução
 Este guia tem como objetivo fornecer instruções detalhadas para a execução do programa que processa e analisa um conjunto de dados de um estudo sobre câncer hepático. O programa realiza diversas etapas, desde o pré-processamento dos dados até a aplicação de modelos de machine learning para prever a sobrevivência dos pacientes. Este documento também aborda as dependências necessárias e a documentação básica para a compreensão e modificação do código.
 
 Dependências de Pacote
+
 Antes de executar o programa, certifique-se de que todas as dependências necessárias estão instaladas. Os pacotes utilizados são:
 
 pandas
+
 seaborn
+
 matplotlib
+
 numpy
+
 scikit-learn
+
 imbalanced-learn
+
 Para instalar todas as dependências, você pode usar o seguinte comando:
+
 pip install pandas seaborn matplotlib numpy scikit-learn imbalanced-learn
 
+
 Estrutura do Projeto
+
 O projeto consiste em dois arquivos principais:
 
+
 DSproject.py: Contém todo o código para processamento dos dados, treinamento dos modelos e visualização dos resultados.
+
 README.md: Este guia com instruções e documentação.
 
+
 Instruções de Execução
+
 Clone o repositório ou copie os arquivos para o seu ambiente local.
+
 
 Abra o Visual Studio Code e navegue até o diretório onde os arquivos estão localizados.
 
+
 Modifique os Caminhos dos Arquivos:
+
 No arquivo main.py, encontrará linhas que especificam o caminho do arquivo de dados. Modifique esses caminhos conforme necessário para corresponder à localização dos seus arquivos:
+
 caminho_do_arquivo = r'C:\Users\marti\Downloads\hcc_dataset.csv'
 
+
 Ajuste o Limite de Correlação:
+
 O valor limite para a remoção de colunas altamente correlacionadas está definido como 0.9. Você pode modificar este valor de acordo com suas necessidades:
+
 to_drop = [column for column in upper.columns if any(abs(upper[column]) > 0.9)]
 
+
 Execute o Programa:
+
 Para executar o programa, abra o terminal integrado do Visual Studio Code e digite:
+
 python DSproject.py
+
 
 Documentação Básica
 
