@@ -49,7 +49,7 @@ caminho_do_arquivo = r'C:\Users\marti\Downloads\hcc_dataset.csv'
 
 # Ajuste o Limite de Correlação:
 
-O valor limite para a remoção de colunas altamente correlacionadas está definido como 0.9. Você pode modificar este valor de acordo com suas necessidades:
+O valor limite para a remoção de colunas altamente correlacionadas está definido como 0.9. Pode modificar este valor de acordo com as suas necessidades:
 to_drop = [column for column in upper.columns if any(abs(upper[column]) > 0.9)]
 
 
