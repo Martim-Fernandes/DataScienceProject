@@ -3,6 +3,7 @@
 Guia de Uso e Execução do Programa
 
 Introdução
+
 Este guia tem como objetivo fornecer instruções detalhadas para a execução do programa que processa e analisa um conjunto de dados de um estudo sobre câncer hepático. O programa realiza diversas etapas, desde o pré-processamento dos dados até a aplicação de modelos de machine learning para prever a sobrevivência dos pacientes. Este documento também aborda as dependências necessárias e a documentação básica para a compreensão e modificação do código.
 
 Dependências de Pacote
