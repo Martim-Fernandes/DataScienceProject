@@ -134,6 +134,7 @@ else:
 # Análise exploratória dos dados após treinamento e tratamento
 class_counts = dados['Class_Dies'].value_counts().rename(index={0: 'Class_Lives', 1: 'Class_Dies'})
 
+# Gráfico de barras das classes de sobrevivência
 plt.figure(figsize=(6, 4))
 sns.barplot(x=class_counts.index, y=class_counts.values)
 plt.title('Sobrevivência dos pacientes')
@@ -141,6 +142,7 @@ plt.xlabel('Vive/Morre')
 plt.ylabel('Contagem')
 plt.show()
 
+# Histogramas das colunas numéricas
 numerical_columns = dados.select_dtypes(include=['number']).columns
 for coluna in numerical_columns:
     plt.figure(figsize=(10, 6))
@@ -148,12 +150,14 @@ for coluna in numerical_columns:
     plt.title(f'Distribuição de {coluna}')
     plt.show()
 
+# Boxplots das colunas numéricas
 for coluna in numerical_columns:
     plt.figure(figsize=(10, 6))
     sns.boxplot(x=dados[coluna])
     plt.title(f'Box Plot de {coluna}')
     plt.show()
 
+# Matriz de correlação
 plt.figure(figsize=(12, 10))
 sns.heatmap(dados[numerical_columns].corr(), annot=True, cmap='coolwarm', fmt=".2f")
 plt.title('Matriz de Correlação')
